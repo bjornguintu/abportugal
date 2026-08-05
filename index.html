@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075f73">
+  <title>Portugal 2026 | Trip Itinerary</title>
+  <style>
+    :root { --ink:#173042; --blue:#075f73; --deep:#063d4a; --tile:#147f96; --yellow:#ffd24a; --coral:#ef6b54; --cream:#fff8df; --paper:#fffdf5; --green:#3f7b59; --shadow:0 16px 42px rgb(6 61 74 / 16%); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:6.5rem; }
+    body { margin:0; color:var(--ink); background:linear-gradient(45deg,rgb(20 127 150 / 5%) 25%,transparent 25%) 0 0/24px 24px,linear-gradient(-45deg,rgb(20 127 150 / 5%) 25%,transparent 25%) 0 12px/24px 24px,var(--cream); font-family:Inter,Avenir,"Segoe UI",sans-serif; line-height:1.6; }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--yellow); outline-offset:4px; }
+    .skip-link { position:fixed; z-index:100; top:.75rem; left:.75rem; padding:.7rem 1rem; color:white; background:var(--deep); border-radius:999px; transform:translateY(-180%); }
+    .skip-link:focus { transform:translateY(0); }
+    .hero { position:relative; min-height:72vh; display:grid; place-items:center; overflow:hidden; padding:7rem 1.5rem 6rem; color:white; text-align:center; background:radial-gradient(circle at 15% 22%,var(--yellow) 0 5.5%,transparent 5.7%),radial-gradient(circle at 86% 26%,var(--coral) 0 7%,transparent 7.2%),linear-gradient(145deg,var(--deep),var(--tile)); }
+    .hero::after { content:""; position:absolute; right:-8rem; bottom:-14rem; width:38rem; height:38rem; border:2rem solid rgb(255 255 255 / 9%); border-radius:50%; box-shadow:0 0 0 2rem rgb(255 210 74 / 11%),0 0 0 4rem rgb(255 255 255 / 7%); }
+    .hero-content { position:relative; z-index:1; max-width:900px; }
+    .eyebrow { display:inline-block; margin:0 0 1rem; padding:.35rem .85rem; color:var(--deep); background:var(--yellow); border-radius:999px; font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; line-height:1.08; }
+    h1 { margin:0; font-size:clamp(3.2rem,9vw,7rem); letter-spacing:-.055em; }
+    .hero-copy { max-width:670px; margin:1.4rem auto 0; font-size:clamp(1.05rem,2vw,1.3rem); }
+    .hero-stats { display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem; margin-top:2rem; }
+    .hero-stats span { padding:.55rem .9rem; border:1px solid rgb(255 255 255 / 40%); border-radius:999px; background:rgb(255 255 255 / 10%); }
+    .site-nav { position:sticky; z-index:20; top:.75rem; width:min(1120px,calc(100% - 2rem)); margin:-2rem auto 2.5rem; padding:.65rem; color:white; background:rgb(6 61 74 / 94%); border:1px solid rgb(255 255 255 / 20%); border-radius:1.25rem; box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+    .site-nav ul { display:flex; gap:.25rem; margin:0; padding:0; overflow-x:auto; list-style:none; scrollbar-width:thin; }
+    .site-nav a { display:block; white-space:nowrap; padding:.55rem .78rem; border-radius:.75rem; font-size:.84rem; font-weight:750; text-decoration:none; }
+    .site-nav a span { display:block; margin-top:.05rem; font-size:.68rem; font-weight:500; opacity:.78; }
+    .site-nav a:hover,.site-nav .current { color:var(--deep); background:var(--yellow); }
+    main { width:min(1080px,calc(100% - 2rem)); margin:0 auto; }
+    .overview { display:grid; grid-template-columns:.8fr 2fr; gap:2rem; align-items:start; margin:4rem 0; padding:clamp(1.5rem,5vw,3rem); background:var(--paper); border:1px solid rgb(7 95 115 / 16%); border-radius:2rem 2rem 2rem .4rem; box-shadow:var(--shadow); }
+    .overview h2 { margin:0; color:var(--blue); font-size:clamp(2rem,5vw,3.4rem); }
+    .overview p { margin:0; font-size:1.1rem; }
+    .route { display:grid; grid-template-columns:repeat(4,1fr); margin:0 0 5rem; padding:0; list-style:none; }
+    .route li { position:relative; padding:1.6rem 1rem 1rem; border-top:4px solid var(--tile); }
+    .route li::before { content:""; position:absolute; top:-.65rem; left:1rem; width:.9rem; height:.9rem; background:var(--yellow); border:4px solid var(--blue); border-radius:50%; }
+    .route strong,.route span { display:block; }
+    .route strong { color:var(--deep); font-family:Georgia,"Times New Roman",serif; font-size:1.35rem; }
+    .route span { margin-top:.2rem; font-size:.9rem; }
+    .section-title { margin:0 0 2rem; color:var(--deep); font-size:clamp(2.4rem,6vw,4.5rem); }
+    .days { display:grid; gap:1.6rem; margin-bottom:5rem; }
+    .day { display:grid; grid-template-columns:9rem 1fr; gap:1.5rem; align-items:start; }
+    .date { position:sticky; top:6.5rem; padding:1rem; color:white; background:var(--coral); border-radius:1rem .25rem 1rem 1rem; text-align:center; box-shadow:0 8px 24px rgb(239 107 84 / 20%); }
+    .date strong,.date span { display:block; }
+    .date strong { font-family:Georgia,"Times New Roman",serif; font-size:1.55rem; }
+    .date span { font-size:.78rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .day-card { padding:clamp(1.4rem,4vw,2.2rem); background:var(--paper); border-radius:.5rem 2rem 2rem 2rem; box-shadow:var(--shadow); }
+    .day-card h3 { margin:0 0 .7rem; color:var(--blue); font-size:clamp(1.7rem,4vw,2.4rem); }
+    .event { display:grid; grid-template-columns:6.5rem 1fr; gap:1rem; padding:1rem 0; border-top:1px solid rgb(7 95 115 / 15%); }
+    .event:first-of-type { border-top:0; }
+    .event time { color:var(--deep); font-weight:850; }
+    .event p { margin:0; }
+    .event small { display:block; margin-top:.25rem; color:#526a75; }
+    .event a { color:var(--blue); font-weight:750; text-underline-offset:.15em; }
+    .activity-details { margin-top:1.25rem; border:1px solid rgb(7 95 115 / 20%); border-radius:1rem; background:#f3f5e7; overflow:hidden; }
+    .activity-details summary { padding:1rem 1.15rem; color:var(--deep); cursor:pointer; font-weight:850; }
+    .activity-details summary:hover { background:#e7eed8; }
+    .activity-details summary:focus-visible { outline:3px solid var(--yellow); outline-offset:-3px; }
+    .activity-details-content { padding:0 1.15rem 1.15rem; }
+    .activity-details-content dl { display:grid; grid-template-columns:9rem 1fr; gap:.65rem 1rem; margin:0 0 1rem; }
+    .activity-details-content dt { color:var(--deep); font-weight:850; }
+    .activity-details-content dd { margin:0; }
+    .activity-details-content h4 { margin:1rem 0 .4rem; color:var(--deep); font-family:Georgia,"Times New Roman",serif; font-size:1.15rem; }
+    .activity-details-content ul { margin:.4rem 0 0; padding-left:1.25rem; }
+    .event.meal-plan { margin-inline:-.6rem; padding-inline:.6rem; background:#f8f4df; border-radius:.75rem; }
+    .event.meal-plan.lunch-plan { background:#f8f4df; box-shadow:inset 4px 0 0 var(--green); }
+    .event.meal-plan.lunch-plan time { color:var(--green); }
+    .event.meal-plan:not(.lunch-plan) { box-shadow:inset 4px 0 0 var(--coral); }
+    .event.meal-plan:not(.lunch-plan) time { color:var(--coral); }
+    .event .placeholder { color:#66757c; font-style:italic; }
+    .open-day { border:2px dashed rgb(20 127 150 / 35%); box-shadow:none; background:rgb(255 253 245 / 70%); }
+    .detail-link { display:inline-flex; align-items:center; gap:.5rem; margin-top:1rem; padding:.7rem 1rem; color:white; background:var(--blue); border-radius:999px; font-weight:800; text-decoration:none; }
+    .detail-link:hover { color:var(--deep); background:var(--yellow); }
+    .travel-notes { margin:0 0 6rem; padding:clamp(2rem,6vw,4rem); color:white; background:var(--green); border-radius:2rem .5rem 2rem 2rem; box-shadow:var(--shadow); }
+    .travel-notes h2 { margin:0 0 1rem; font-size:clamp(2rem,5vw,3.5rem); }
+    .travel-notes ul { margin:0; padding-left:1.3rem; }
+    footer { padding:2rem 1rem 6rem; color:var(--deep); text-align:center; }
+    .back-to-top { position:fixed; z-index:30; right:1rem; bottom:1rem; display:inline-flex; align-items:center; gap:.45rem; padding:.8rem 1rem; color:white; background:var(--deep); border:2px solid white; border-radius:999px; box-shadow:0 8px 24px rgb(6 61 74 / 30%); font-weight:800; text-decoration:none; }
+    .back-to-top:hover { color:var(--deep); background:var(--yellow); }
+    @media (max-width:700px) { .hero{min-height:60vh;padding-top:5rem}.site-nav{top:.5rem;width:calc(100% - 1rem);margin-top:-1.3rem}.overview{grid-template-columns:1fr;gap:1rem;margin-block:2.5rem}.route{grid-template-columns:1fr 1fr}.route li{min-height:6rem}.day{grid-template-columns:1fr;gap:.5rem}.date{position:static;text-align:left}.date strong,.date span{display:inline}.date span{margin-left:.5rem}.event{grid-template-columns:1fr;gap:.2rem}.activity-details-content dl{grid-template-columns:1fr;gap:.15rem}.activity-details-content dd+dt{margin-top:.5rem}.back-to-top{width:3.2rem;height:3.2rem;justify-content:center;padding:0;font-size:0}.back-to-top span{font-size:1.3rem} }
+    @media (max-width:420px) { .route{grid-template-columns:1fr} }
+    @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto} }
+    @media print { .site-nav,.back-to-top,.skip-link{display:none}.hero{min-height:auto;padding:3rem 1rem}.day-card,.overview,.travel-notes{box-shadow:none;break-inside:avoid}.date{position:static} }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to itinerary</a>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Portugal · Autumn 2026</p>
+      <h1>Lisboa to the Algarve</h1>
+      <p class="hero-copy">Twelve days of tiled cities, Atlantic views, northern flavors, and the sunlit southern coast.</p>
+      <div class="hero-stats" aria-label="Trip overview"><span>Sep 23–Oct 4</span><span>12 days</span><span>Lisbon · Porto · Algarve</span></div>
+    </div>
+  </header>
+  <nav class="site-nav" aria-label="Trip site and itinerary navigation">
+    <ul>
+      <li><a href="#departure">Departure<span>Sep 23</span></a></li>
+      <li><a href="#lisbon">Lisbon<span>Sep 24–26</span></a></li>
+      <li><a href="#porto">Porto<span>Sep 26–29</span></a></li>
+      <li><a href="#algarve">Algarve<span>Sep 29–Oct 2</span></a></li>
+      <li><a href="#final-lisbon">Return to Lisbon<span>Oct 2–4</span></a></li>
+      <li><a href="#homeward">Homeward<span>Oct 4</span></a></li>
+    </ul>
+  </nav>
+  <main id="main-content">
+    <section class="overview" aria-labelledby="journey-title">
+      <h2 id="journey-title">The journey</h2>
+      <p>Fly overnight from Washington to Lisbon, travel north by Alfa Pendular train to Porto, fly south to Faro for a coastal road trip, then finish with two nights in central Lisbon before heading home.</p>
+    </section>
+    <ol class="route" aria-label="Trip route">
+      <li><strong>Lisbon</strong><span>Sep 24–26 · 2 nights</span></li>
+      <li><strong>Porto</strong><span>Sep 26–29 · 3 nights</span></li>
+      <li><strong>Algarve</strong><span>Sep 29–Oct 2 · 3 nights</span></li>
+      <li><strong>Lisbon</strong><span>Oct 2–4 · 2 nights</span></li>
+    </ol>
+
+    <h2 class="section-title">Day by day</h2>
+    <div class="days">
+      <section class="day" id="departure" aria-labelledby="day-23">
+        <div class="date"><strong>Sep 23</strong><span>Wednesday</span></div>
+        <div class="day-card"><h3 id="day-23">Depart Washington</h3><div class="event meal-plan lunch-plan"><time>Lunch</time><p><strong>Lunch at home</strong><small>Before leaving for the airport</small></p></div><div class="event"><time datetime="2026-09-23T17:45-04:00">5:45 PM EDT</time><p><strong>Fly IAD → LIS</strong><small>TAP Air Portugal TP 232 · nonstop · 7 hr 25 min · overnight</small></p></div><div class="event meal-plan"><time>In flight</time><p><strong>Dinner</strong><small>In-flight meal</small></p></div></div>
+      </section>
+
+      <section class="day" id="lisbon" aria-labelledby="day-24">
+        <div class="date"><strong>Sep 24</strong><span>Thursday</span></div>
+        <div class="day-card"><h3 id="day-24">Olá, Lisbon</h3><div class="event"><time datetime="2026-09-24T06:10+01:00">6:10 AM</time><p><strong>Arrive at Lisbon Airport</strong><small>Clear immigration, collect luggage, and travel into the city.</small></p></div><div class="event"><time datetime="2026-09-24T11:30+01:00">11:30 AM</time><p><strong>Arrive for the Undiscovered Lisbon Food &amp; Wine Tour</strong><small>Eating Europe · tour begins at 11:45 AM · 2 adults · arrive 15 minutes early</small><small><a href="https://www.google.com/maps/search/?api=1&amp;query=Pra%C3%A7a%20dos%20Restauradores%2C%201150-265%20Lisboa%2C%20Portugal" target="_blank" rel="noopener noreferrer">Praça dos Restauradores, 1150-265 Lisboa, Portugal ↗</a></small><small>Meet next to the monument and look for a guide carrying an Eating Europe sign or bag.</small><small><strong>Running late or cannot find the group?</strong> Call <a href="tel:+19179096432">+1 917-909-6432</a> or <a href="tel:+447723497280">+44 7723 497280</a>.</small></p></div><div class="event meal-plan lunch-plan"><time>Lunch</time><p><strong>Eating Europe food tour</strong><small>Lunch tastings included during the tour</small></p></div><div class="event"><time datetime="2026-09-24T14:00+01:00">2:00 PM</time><p><strong>Check in: 54 São Paulo</strong><small>47 Rua da Boavista · Misericórdia · studio apartment</small></p></div><div class="event meal-plan"><time datetime="2026-09-24T19:00+01:00">7:00 PM</time><p><strong>Dinner at <a href="https://www.google.com/maps/search/?api=1&amp;query=Solar%20dos%20Presuntos%2C%20Rua%20das%20Portas%20de%20Santo%20Ant%C3%A3o%20150%2C%20Lisboa" target="_blank" rel="noopener noreferrer">Solar dos Presuntos ↗</a></strong><small>Reservation until 8:00 PM · 2 guests · Rua das Portas de Santo Antão 150, Lisbon</small></p></div></div>
+      </section>
+
+      <section class="day" aria-labelledby="day-25">
+        <div class="date"><strong>Sep 25</strong><span>Friday</span></div>
+        <div class="day-card"><h3 id="day-25">Lisbon from Alfama to Chiado</h3><div class="event"><time datetime="2026-09-25T08:45+01:00">8:45 AM</time><p><strong>Begin in hilltop Alfama</strong><small>Castle views, a traditional lunch, the Baixa waterfront, and dinner at Ofício.</small></p></div><div class="event meal-plan"><time datetime="2026-09-25T12:00+01:00">12:00 PM</time><p><strong>Lunch at <a href="https://www.google.com/maps/search/?api=1&amp;query=A%20Provinciana%2C%20Lisboa%2C%20Portugal" target="_blank" rel="noopener noreferrer">A Provinciana ↗</a></strong><small>Traditional Portuguese classics</small></p></div><div class="event meal-plan"><time datetime="2026-09-25T20:00+01:00">8:00 PM</time><p><strong>Dinner at <a href="https://www.google.com/maps/search/?api=1&amp;query=Of%C3%ADcio%20Tasquinha%2C%20Lisboa%2C%20Portugal" target="_blank" rel="noopener noreferrer">Ofício ↗</a></strong><small>Modern Portuguese petiscos</small></p></div><a class="detail-link" href="lisbon-september-25-itinerary.html">Open the Lisbon itinerary →</a></div>
+      </section>
+
+      <section class="day" id="porto" aria-labelledby="day-26">
+        <div class="date"><strong>Sep 26</strong><span>Saturday</span></div>
+        <div class="day-card"><h3 id="day-26">Train north to Porto</h3><div class="event"><time datetime="2026-09-26T08:00+01:00">8:00 AM</time><p><strong>Lisboa Santa Apolónia → Porto Campanhã</strong><small>Alfa Pendular 121 · coach 3 · seats 55 and 57 · arrives 10:55 AM</small></p></div><div class="event"><time datetime="2026-09-26T11:06+01:00">11:06 AM</time><p><strong>Connect to Porto São Bento</strong><small>Urban train · arrives 11:10 AM</small></p></div><div class="event meal-plan"><time datetime="2026-09-26T12:45+01:00">12:45 PM</time><p><strong>Lunch at <a href="https://www.google.com/maps/search/?api=1&amp;query=Casa%20Expresso%2C%20Pra%C3%A7a%20de%20Carlos%20Alberto%2073%2C%20Porto" target="_blank" rel="noopener noreferrer">Casa Expresso ↗</a></strong><small>Authentic Portuguese comfort food</small></p></div><div class="event"><time datetime="2026-09-26T15:00+01:00">3:00 PM</time><p><strong>Check in: Vincci Bonjardim</strong><small>Rua do Bonjardim 567 · central Porto</small></p></div><div class="event meal-plan"><time datetime="2026-09-26T20:00+01:00">8:00 PM</time><p><strong>Dinner at <a href="https://www.google.com/maps/search/?api=1&amp;query=Fauno%2C%20Rua%20Estreita%20dos%20L%C3%B3ios%205%2C%20Porto" target="_blank" rel="noopener noreferrer">Fauno ↗</a></strong><small>Five-course tasting menu · reservation until 10:15 PM</small></p></div><details class="activity-details"><summary>Fauno reservation details</summary><div class="activity-details-content"><dl><dt>Date</dt><dd>Saturday, September 26</dd><dt>Time</dt><dd>8:00–10:15 PM</dd><dt>Address</dt><dd>R. Estreita dos Lóios 5, 4050-244 Porto, Portugal</dd><dt>Organizer</dt><dd>Amber Keyser</dd></dl></div></details><a class="detail-link" href="porto-september-26-itinerary.html">Open the Porto arrival itinerary →</a></div>
+      </section>
+
+      <section class="day" aria-labelledby="day-27">
+        <div class="date"><strong>Sep 27</strong><span>Sunday</span></div>
+        <div class="day-card open-day"><h3 id="day-27">Porto at leisure</h3><p>An open day for the Ribeira, São Bento's azulejos, bridges over the Douro, port lodges, markets, and northern Portuguese cuisine.</p><div class="event meal-plan"><time>Lunch</time><p><strong>Lunch</strong><small class="placeholder">To be planned</small></p></div><div class="event meal-plan"><time>Dinner</time><p><strong>Dinner</strong><small class="placeholder">To be planned</small></p></div></div>
+      </section>
+
+      <section class="day" aria-labelledby="day-28">
+        <div class="date"><strong>Sep 28</strong><span>Monday</span></div>
+        <div class="day-card"><h3 id="day-28">Douro Valley wine and boat tour</h3><div class="event"><time datetime="2026-09-28T07:55+01:00">7:55 AM</time><p><strong>Meet in Praça da Liberdade</strong><small>In front of McDonald's Imperial · Praça da Liberdade 126 · arrive 5 minutes early</small></p></div><div class="event"><time datetime="2026-09-28T08:00+01:00">8:00 AM</time><p><strong>Depart for the Douro Valley</strong><small>BL Heritage Tours · English guide · small group of up to 8 guests · approximately 1 hr 45 min by air-conditioned minivan</small></p></div><div class="event meal-plan"><time>Lunch</time><p><strong>Winery lunch</strong><small>Three traditional dishes with local wines · included with tour</small></p></div><div class="event meal-plan"><time>Dinner</time><p><strong>Dinner</strong><small class="placeholder">To be planned</small></p></div><details class="activity-details"><summary>Tour inclusions and important information</summary><div class="activity-details-content"><dl><dt>Travelers</dt><dd>2 adults</dd><dt>Meeting point</dt><dd>Praça da Liberdade 126, in front of McDonald's Imperial</dd><dt>End point</dt><dd>Returns to the same meeting point</dd><dt>Provider</dt><dd>BL Heritage Tours</dd></dl><h4>Included</h4><ul><li>Visits and tastings at two family-owned wineries</li><li>Lunch of three traditional dishes paired with local wines</li><li>One-hour private group boat trip with snacks and a cocktail</li><li>Bottled water and air-conditioned transportation</li></ul><h4>Before departure</h4><ul><li>Eat a solid breakfast before meeting the group.</li><li>Notify the provider in advance about food allergies or dietary restrictions.</li><li>Check the weather forecast for Pinhão in the Vila Real district.</li><li>Bring the e-ticket to present on the day.</li><li>Return to Porto can be delayed by up to approximately 45 minutes.</li><li>In severe rain or wind, the boat trip may be replaced by a third winery visit with tastings.</li></ul><h4>Not included</h4><ul><li>Gratuities</li><li>Personal purchases</li></ul></div></details></div>
+      </section>
+
+      <section class="day" id="algarve" aria-labelledby="day-29">
+        <div class="date"><strong>Sep 29</strong><span>Tuesday</span></div>
+        <div class="day-card"><h3 id="day-29">Fly south to the Algarve</h3><div class="event meal-plan"><time>Lunch</time><p><strong>Lunch</strong><small class="placeholder">To be planned</small></p></div><div class="event"><time datetime="2026-09-29T12:00+01:00">12:00 PM</time><p><strong>Check out: Vincci Bonjardim</strong></p></div><div class="event"><time datetime="2026-09-29T14:50+01:00">2:50 PM</time><p><strong>Fly OPO → FAO</strong><small>Ryanair FR 5486 · nonstop · arrives 4:00 PM</small></p></div><div class="event"><time datetime="2026-09-29T16:30+01:00">4:30 PM</time><p><strong>Pick up rental car at Faro Airport</strong><small>Avis · Renault Clio or similar · manual transmission</small></p></div><div class="event"><time>Evening</time><p><strong>Check in: Tivoli Carvoeiro Algarve Resort</strong><small>Vale Covo, Carvoeiro · superior room with terrace</small></p></div><div class="event meal-plan"><time>Dinner</time><p><strong>Dinner in Carvoeiro</strong><small class="placeholder">To be planned</small></p></div></div>
+      </section>
+
+      <section class="day" aria-labelledby="day-30">
+        <div class="date"><strong>Sep 30</strong><span>Wednesday</span></div>
+        <div class="day-card open-day"><h3 id="day-30">The Algarve coast</h3><p>An open day for sea cliffs, beaches, coastal villages, cave viewpoints, and leisurely drives from Carvoeiro.</p><div class="event meal-plan"><time>Lunch</time><p><strong>Lunch</strong><small class="placeholder">To be planned</small></p></div><div class="event meal-plan"><time>Dinner</time><p><strong>Dinner</strong><small class="placeholder">To be planned</small></p></div></div>
+      </section>
+
+      <section class="day" aria-labelledby="day-1">
+        <div class="date"><strong>Oct 1</strong><span>Thursday</span></div>
+        <div class="day-card open-day"><h3 id="day-1">The Algarve coast</h3><p>A second open day for the beaches, villages, and dramatic scenery around Carvoeiro.</p><div class="event meal-plan"><time>Lunch</time><p><strong>Lunch</strong><small class="placeholder">To be planned</small></p></div><div class="event meal-plan"><time>Dinner</time><p><strong>Dinner</strong><small class="placeholder">To be planned</small></p></div></div>
+      </section>
+
+      <section class="day" id="final-lisbon" aria-labelledby="day-2">
+        <div class="date"><strong>Oct 2</strong><span>Friday</span></div>
+        <div class="day-card"><h3 id="day-2">Coast to capital</h3><div class="event meal-plan"><time>Lunch</time><p><strong>Lunch en route</strong><small class="placeholder">To be planned</small></p></div><div class="event"><time datetime="2026-10-02T12:00+01:00">12:00 PM</time><p><strong>Check out: Tivoli Carvoeiro</strong></p></div><div class="event"><time datetime="2026-10-02T15:00+01:00">3:00 PM</time><p><strong>Return rental car at Lisbon Airport</strong><small>Avis · Aeroporto Portela</small></p></div><div class="event"><time>After 3 PM</time><p><strong>Check in: My Story Hotel Figueira</strong><small>Praça da Figueira 15 · central Lisbon</small></p></div><div class="event meal-plan"><time>Dinner</time><p><strong>Dinner in Lisbon</strong><small class="placeholder">To be planned</small></p></div></div>
+      </section>
+
+      <section class="day" aria-labelledby="day-3">
+        <div class="date"><strong>Oct 3</strong><span>Saturday</span></div>
+        <div class="day-card"><h3 id="day-3">Sintra and a sunset sail</h3><div class="event"><time datetime="2026-10-03T07:30+01:00">7:30 AM</time><p><strong>Early train from Lisbon</strong><small>Palaces, gardens, historic Sintra, and a return to Lisbon around 3:00 PM.</small></p></div><div class="event meal-plan"><time datetime="2026-10-03T12:45+01:00">12:45 PM</time><p><strong>Lunch in historic Sintra</strong><small>Restaurant to be chosen</small></p></div><div class="event"><time datetime="2026-10-03T17:00+01:00">5:00 PM</time><p><strong>Lisbon sailboat sunset tour with a drink</strong><small>2 adults · English · 2 hours · meet at Doca de Alcântara, Gate 2 · check WhatsApp for the boat's location on the day</small></p></div><div class="event meal-plan"><time>After 7 PM</time><p><strong>Dinner after the sunset sail</strong><small class="placeholder">To be planned</small></p></div><details class="activity-details"><summary>Sailing details and important information</summary><div class="activity-details-content"><dl><dt>Arrival time</dt><dd>4:40 PM, 20 minutes before departure</dd><dt>Meeting point</dt><dd>Doca de Alcântara, Gate 2, 1350-353 Lisboa</dd><dt>Tour time</dt><dd>5:00–7:00 PM</dd><dt>End point</dt><dd>The tour returns to the same place where it began</dd><dt>Tickets</dt><dd>Mobile tickets are available in the GetYourGuide app</dd></dl><h4>Know before you go</h4><ul><li>The experience requires good weather. If poor weather causes a cancellation, the operator will offer another date or a full refund.</li><li>A minimum number of travelers is required. If it is not met, the operator will offer another date, another experience, or a full refund.</li><li>The tour has a maximum of 10 travelers.</li><li>Check WhatsApp on the day for the boat's precise location.</li></ul></div></details><a class="detail-link" href="sintra-half-day-itinerary.html">Open the Sintra itinerary →</a></div>
+      </section>
+
+      <section class="day" id="homeward" aria-labelledby="day-4">
+        <div class="date"><strong>Oct 4</strong><span>Sunday</span></div>
+        <div class="day-card"><h3 id="day-4">Homeward bound</h3><div class="event"><time datetime="2026-10-04T11:00+01:00">11:00 AM</time><p><strong>Check out: My Story Hotel Figueira</strong></p></div><div class="event"><time datetime="2026-10-04T11:40+01:00">11:40 AM</time><p><strong>Fly LIS → IAD</strong><small>TAP Air Portugal TP 231 · nonstop · 8 hr 30 min · arrives 3:10 PM EDT</small></p></div><div class="event meal-plan"><time>In flight</time><p><strong>Lunch</strong><small>In-flight meal</small></p></div><div class="event meal-plan"><time>Dinner</time><p><strong>Dinner after arriving home</strong><small class="placeholder">To be planned</small></p></div></div>
+      </section>
+    </div>
+
+    <section class="travel-notes" aria-labelledby="notes-title"><h2 id="notes-title">Before you go</h2><ul><li>Recheck all flight and rail times shortly before departure.</li><li>Allow time for airport transfers, security, and rental-car return.</li><li>The Algarve rental car has a manual transmission.</li><li>Keep booking confirmations and hotel PINs in a secure travel app rather than on this public itinerary.</li></ul></section>
+  </main>
+  <footer>Boa viagem, Bjorn and Amber. Portugal awaits.</footer>
+  <a class="back-to-top" href="#top"><span aria-hidden="true">↑</span> Back to top</a>
+  <script>
+    document.querySelectorAll('.meal-plan').forEach((meal) => {
+      if (meal.querySelector('strong')?.textContent.toLowerCase().includes('lunch')) {
+        meal.classList.add('lunch-plan');
+      }
+    });
+  </script>
+</body>
+</html>
