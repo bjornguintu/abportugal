@@ -106,7 +106,7 @@
       backdrop-filter: blur(12px);
     }
     .floating-nav ul { display: flex; gap: .25rem; margin: 0; padding: 0; overflow-x: auto; list-style: none; scrollbar-width: thin; }
-    .floating-nav a { display: block; white-space: nowrap; padding: .55rem .75rem; border-radius: .75rem; font-size: .82rem; font-weight: 750; text-decoration: none; }
+    .floating-nav a { display: flex; min-height: 44px; align-items: center; white-space: nowrap; padding: .55rem .75rem; border-radius: .75rem; font-size: .82rem; font-weight: 750; text-decoration: none; }
     .floating-nav a:hover { color: var(--blue-deep); background: var(--yellow); }
 
     main { width: min(1020px, calc(100% - 2rem)); margin: 0 auto; }
@@ -161,7 +161,11 @@
 
     @media (max-width: 650px) {
       .hero { min-height: 58vh; padding-top: 5rem; }
-      .floating-nav { top: .5rem; width: calc(100% - 1rem); margin-top: -1.3rem; border-radius: 1rem; }
+      .floating-nav { top: 0; width: 100%; margin-top: 0; padding: .45rem .5rem; border-inline: 0; border-radius: 0; }
+      .floating-nav ul { gap: .35rem; padding-inline: .15rem; scroll-snap-type: x proximity; scroll-padding-inline: .15rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-inline: contain; }
+      .floating-nav ul::-webkit-scrollbar { display: none; }
+      .floating-nav li { flex: 0 0 auto; scroll-snap-align: start; }
+      .floating-nav a { padding: .45rem .75rem; }
       .intro { grid-template-columns: 1fr; gap: 1rem; margin-block: 2.5rem 3rem; }
       .timeline::before { left: .45rem; }
       .stop { grid-template-columns: 1fr; gap: .35rem; padding-left: 2rem; }
@@ -198,8 +202,6 @@
   <nav class="floating-nav" aria-label="Trip site and itinerary navigation">
     <ul>
       <li><a href="index.html">← Trip overview</a></li>
-      <li><a href="lisbon-september-25-itinerary.html">Lisbon · Sep 25</a></li>
-      <li><a href="porto-september-26-itinerary.html">Porto · Sep 26</a></li>
       <li><a href="sintra-half-day-itinerary.html" aria-current="page">Sintra</a></li>
       <li><a href="#depart">7:30 · Train</a></li>
       <li><a href="#arrive">8:15 · Arrive</a></li>
