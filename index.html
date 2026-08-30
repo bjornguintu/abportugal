@@ -186,6 +186,10 @@
   <footer>Boa viagem, Bjorn and Amber. Portugal awaits.</footer>
   <a class="back-to-top" href="#top"><span aria-hidden="true">↑</span> Back to top</a>
   <script>
+    const september28Dinner = document.querySelector('[aria-labelledby="day-28"] .event.meal-plan:last-of-type');
+    if (september28Dinner) {
+      september28Dinner.innerHTML = '<time datetime="2026-09-28T20:30+01:00">8:30 PM</time><p><strong>Dinner at <a href="https://www.google.com/maps/search/?api=1&amp;query=Bacalhau%2C%20Muro%20dos%20Bacalhoeiros%20154%2C%204050-080%20Porto%2C%20Portugal" target="_blank" rel="noopener noreferrer">Bacalhau ↗</a></strong><small>Reservation until 10:00 PM · 2 guests · Muro dos Bacalhoeiros 154, 4050-080 Porto</small></p>';
+    }
     document.querySelectorAll('.meal-plan').forEach((meal) => {
       if (meal.querySelector('strong')?.textContent.toLowerCase().includes('lunch')) {
         meal.classList.add('lunch-plan');
