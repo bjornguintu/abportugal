@@ -186,6 +186,10 @@
   <footer>Boa viagem, Bjorn and Amber. Portugal awaits.</footer>
   <a class="back-to-top" href="#top"><span aria-hidden="true">↑</span> Back to top</a>
   <script>
+    const october3Lunch = document.querySelector('time[datetime="2026-10-03T12:45+01:00"]')?.closest('.event');
+    if (october3Lunch) {
+      october3Lunch.innerHTML = '<time datetime="2026-10-03T12:45+01:00">12:45 PM</time><p><strong>Lunch at <a href="https://maps.app.goo.gl/pZkyvBcLLkHbXhsz9" target="_blank" rel="noopener noreferrer">Tascantiga ↗</a></strong><small>Walk-in only · reservations not accepted</small></p>';
+    }
     const september28Meeting = document.querySelector('time[datetime="2026-09-28T07:55+01:00"]')?.closest('.event')?.querySelector('strong');
     if (september28Meeting) {
       september28Meeting.innerHTML = '<a href="https://maps.app.goo.gl/j2QEKoL9oXwgqaxP8" target="_blank" rel="noopener noreferrer">Meet in Praça da Liberdade ↗</a>';
